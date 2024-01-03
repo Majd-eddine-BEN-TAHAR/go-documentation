@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create User</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Create New User</h1>
+    </div>
+    <div class="nav-bar">
+      <a href="/">Home</a>
+      <a href="/new_user">Create User</a>
+      <a href="/list_users">List Users</a>
+    </div>
+
+    <div class="container">
+      <form action="/create_user" method="post">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br />
+        <label for="email">Email:</label><br />
+        <input type="text" id="email" name="email" /><br /><br />
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

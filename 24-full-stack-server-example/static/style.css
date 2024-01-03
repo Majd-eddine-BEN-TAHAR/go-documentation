@@ -1,0 +1,212 @@
+/* Reset some basic elements */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+form,
+input,
+button {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Container for content */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #005691;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Navigation Bar Styles */
+.nav-bar {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav-bar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-bar a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Form Styles */
+form {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    /* Primary blue color */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    /* Adds a subtle shadow */
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* A darker shade of blue for hover effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Larger shadow on hover */
+    transform: translateY(-2px);
+    /* Slightly raises the button */
+}
+
+/* Additional button variations for different actions */
+/* For example, a red button for dangerous actions like 'delete' */
+.button-danger {
+    background-color: #dc3545;
+    /* Red color */
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.error-message {
+    color: red;
+    margin: 15px 0;
+    padding: 12px;
+    border: 1px solid red;
+    background-color: #ffd6d6;
+}
+
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #009879;
+    color: white;
+    text-align: center;
+}
+
+td {
+    color: #333;
+}
+
+tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>List of Users</h1>
+    </div>
+    <div class="nav-bar">
+      <a href="/">Home</a>
+      <a href="/new_user">Create User</a>
+      <a href="/list_users">List Users</a>
+    </div>
+    <div class="container">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+        {{ range .Users }}
+        <tr>
+          <td>{{ .Name }}</td>
+          <td>{{ .Email }}</td>
+        </tr>
+        {{ end }}
+      </table>
+      <div class="pagination">
+        {{ if gt .CurrentPage 1 }}
+        <a href="/list_users?page={{ dec .CurrentPage }}">&laquo;</a>
+        {{ end }} {{ range seq 1 .TotalPages }}
+        <a
+          href="/list_users?page={{ . }}"
+          class="{{ if eq $.CurrentPage . }}active{{ end }}"
+          >{{ . }}</a
+        >
+        {{ end }} {{ if lt .CurrentPage .TotalPages }}
+        <a href="/list_users?page={{ inc .CurrentPage }}">&raquo;</a>
+        {{ end }}
+      </div>
+    </div>
+  </body>
+</html>

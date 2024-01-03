@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[Page Title]</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>My Go MVC Application</h1>
+    </div>
+    <div class="nav-bar">
+      <a href="/">Home</a>
+      <a href="/new_user">Create User</a>
+      <a href="/list_users">List Users</a>
+    </div>
+    <div class="container">
+      <h1>User Details</h1>
+      <p><strong>Name:</strong> {{ .Name }}</p>
+      <p><strong>Email:</strong> {{ .Email }}</p>
+
+      <button id="updateButton">Update Details</button>
+      <div id="updateForm" style="display: none">
+        <!-- Form for updating user details -->
+        <form method="post" action="/updateUser">
+          <input type="hidden" name="id" value="{{ .ID }}" />
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="{{ .Name }}" /><br />
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value="{{ .Email }}"
+          /><br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById("updateButton").onclick = function () {
+        document.getElementById("updateForm").style.display = "block";
+      };
+    </script>
+  </body>
+</html>

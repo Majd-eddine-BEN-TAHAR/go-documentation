@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS events (
     start_time DATETIME NOT NULL,
     end_time DATETIME NOT NULL,
     creator_id INTEGER NOT NULL,
+    image_url TEXT,
     FOREIGN KEY (creator_id) REFERENCES users(id)
 );
 

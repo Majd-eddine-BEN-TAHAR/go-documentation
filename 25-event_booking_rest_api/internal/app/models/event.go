@@ -11,4 +11,5 @@ type Event struct {
     StartTime   time.Time `json:"start_time"`
     EndTime     time.Time `json:"end_time"`
     CreatorID int         `json:"creator_id"` // Reference to the user who created the event.
+    ImageURL string       `json:"image_url,omitempty"` // URL of the event image
 }

@@ -3,6 +3,7 @@ package validations
 import (
 	"errors"
 	"event_booking_api/internal/app/models"
+	"os"
 	"time"
 )
 
@@ -25,6 +26,26 @@ func ValidateEvent(event models.Event) error {
     // Ensure the event start time is not in the past
     if event.StartTime.Before(time.Now()) {
         return errors.New("event start time must be in the future")
+    }
+
+    // Validate the Image URL
+    if err := validateImageURL(event.ImageURL); err != nil {
+        return err
+    }
+
+    return nil
+}
+
+// validateImageURL checks if the provided image URL is valid.
+func validateImageURL(imageURL string) error {
+    // Check if the image URL is not empty
+    if imageURL == "" {
+        return errors.New("image URL must be provided")
+    }
+
+    // Check if the file exists at the given path
+    if _, err := os.Stat(imageURL); os.IsNotExist(err) {
+        return errors.New("image file does not exist at the provided path")
     }
 
     return nil

@@ -22,6 +22,10 @@ func main() {
 	// Initialize database schema and create tables
     database.InitDBSchema(database.DB, "./scripts")
 
+    // Serve files from the 'uploads' directory under the '/uploads' URL path
+    http.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir("uploads"))))
+    
+    // main router 
     http.HandleFunc("/", app.Router)
 
     // Define the HTTP server

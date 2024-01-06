@@ -16,15 +16,17 @@ curl -X GET http://localhost:8000/events/5 -H "Content-Type: application/json"
 
 --------------------CREATE AN EVENT -------------------------------
 curl -X POST http://localhost:8000/events \
--H "Content-Type: application/json" \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3MDQ1MzA4MTZ9.mLkWSY4_D7CPXGkuDezj0SmBTrftK_cW0XkmOt9zHW0" \
--d '{"title":"REACTJS","description":"Annual tech conference", "location":"Conference Center, City", "start_time":"2024-05-15T09:00:00Z", "end_time":"2024-05-15T17:00:00Z"}'
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE3MDQ1NzA3OTh9.T5DCBhpOsFZsi9ydyE90dEt5lZAY1CNK6N4KsRn_uSY" \
+     -H "Content-Type: multipart/form-data" \
+     -F "event={\"title\":\"New Year Party\",\"description\":\"A grand celebration\",\"location\":\"Downtown Club\",\"start_time\":\"2024-12-31T22:00:00Z\",\"end_time\":\"2025-01-01T02:00:00Z\",\"creator_id\":1}" \
+     -F "image=@/home/yonkersleroy/Downloads/2.png"    
 
 --------------------UPDATE AN EVENT-----------------------------------
 curl -X PUT http://localhost:8000/events/7 \
--H "Content-Type: application/json" \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3MDQ1MzA4MTZ9.mLkWSY4_D7CPXGkuDezj0SmBTrftK_cW0XkmOt9zHW0" \
--d '{"title":"majdedinxxxxxxxxxxxxxxxxx","description":"Annual tech conferencexxxxxxxxxxxxxxxxxxxxxxxxxx", "location":"Conference Center, City", "start_time":"2024-05-15T09:00:00Z", "end_time":"2024-05-15T17:00:00Z"}'
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3MDQ1NzM3Mjl9.KmmqBvzDd3C89RHD9NunFCck3eWqNRmeq8-g2_hzB1U" \
+     -H "Content-Type: multipart/form-data" \
+     -F "event={\"title\":\"Updated Event Title\",\"description\":\"Updated description\",\"location\":\"New Location\",\"start_time\":\"2024-12-31T22:00:00Z\",\"end_time\":\"2025-01-01T02:00:00Z\",\"creator_id\":1}" \
+     -F "image=@/home/yonkersleroy/Downloads/2.png" 
 
 
 --------------------DELETE AN EVENT--------------------------------

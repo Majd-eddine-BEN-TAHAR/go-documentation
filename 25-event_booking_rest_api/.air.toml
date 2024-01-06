@@ -1,0 +1,19 @@
+# .air.toml
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  bin = "./tmp/main"
+  cmd = "go build -o ./tmp/main ./cmd/server/main.go"
+  include_ext = ["go", "html", "tpl", "tmpl", "css", "js", "svg", "png", "jpg"]
+  exclude_dir = ["tmp", "vendor", "logs", "data"]
+  delay = 1000  # Adjust this as needed
+
+[log]
+  time = true
+
+[misc]
+  clean_on_exit = true
+
+[screen]
+  clear_on_rebuild = true

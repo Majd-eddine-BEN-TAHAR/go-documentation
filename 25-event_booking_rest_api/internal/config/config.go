@@ -12,6 +12,7 @@ import (
 type Config struct {
     DatabasePath string
     JWTSecret    string
+    PORT         string
 }
 
 // LoadConfig loads application configurations from .env file
@@ -26,5 +27,6 @@ func LoadConfig() *Config {
     return &Config{
         DatabasePath: os.Getenv("DATABASE_PATH"), // Database path from .env
         JWTSecret:    os.Getenv("JWT_SECRET"),    // JWT secret key from .env
+	PORT:         os.Getenv("PORT"),          // PORT number from .env
     }
 }

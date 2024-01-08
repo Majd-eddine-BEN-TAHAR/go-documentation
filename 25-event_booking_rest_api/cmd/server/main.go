@@ -29,7 +29,7 @@ func main() {
     http.HandleFunc("/", app.Router)
 
     // Define the HTTP server
-    httpPort := os.Getenv("PORT")
+    httpPort := cfg.PORT
     if httpPort == "" {
         httpPort = "3000" // Default port if not specified
     }

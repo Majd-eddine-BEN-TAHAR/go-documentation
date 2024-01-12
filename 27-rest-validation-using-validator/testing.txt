@@ -1,0 +1,7 @@
+curl -X POST http://localhost:8000/car \
+-H "Content-Type: application/json" \
+-d '{"make": "Toyota", "model": "Corolla", "year": 20202}'
+
+curl -X POST http://localhost:8000/user \
+-H "Content-Type: application/json" \
+-d '{"make": "Toyota", "model": "Corolla", "year": 20202}'

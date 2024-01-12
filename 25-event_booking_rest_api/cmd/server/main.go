@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
 
 	"event_booking_api/internal/app"
 	"event_booking_api/internal/config"

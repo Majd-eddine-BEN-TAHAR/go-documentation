@@ -31,7 +31,7 @@ func collectGoFilesDocs(rootFolder, outputFile string) error {
 				return err
 			}
 
-			fmt.Fprintf(writer, "\n%s\nFile: /%s\n%s\n", strings.Repeat("-", 20), relPath, strings.Repeat("-", 20))
+			fmt.Fprintf(writer, "\n%s\n// File: /%s\n%s\n", "//"+strings.Repeat("-", 20), relPath, "//" + strings.Repeat("-", 20))
 
 			fileContent, err := os.ReadFile(path)
 			if err != nil {
@@ -49,7 +49,7 @@ func collectGoFilesDocs(rootFolder, outputFile string) error {
 }
 
 func main() {
-	rootFolder := "/home/yonkersleroy/Documents/go/go-course/25-event_booking_rest_api" // Root folder path
+	rootFolder := "/home/yonkersleroy/Documents/go/go-course/27-validation-using-validator" // Root folder path
 	outputFile := "collected_docs.txt"                                         // Output file name
 
 	if err := collectGoFilesDocs(rootFolder, outputFile); err != nil {

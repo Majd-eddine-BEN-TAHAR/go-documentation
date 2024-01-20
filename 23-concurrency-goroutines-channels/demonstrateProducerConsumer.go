@@ -16,20 +16,23 @@ func producer(buffer chan<- int) {
 }
 
 // Consumer function
-func consumer(buffer <-chan int) {
+func consumer(buffer <-chan int, done chan<- bool) {
 	for value := range buffer {
 		fmt.Println("Consumed", value)
 	}
+	done <- true
 }
 
 // demonstrateProducerConsumer shows a basic producer-consumer scenario
 func demonstrateProducerConsumer() {
 	fmt.Println("\nProducer-Consumer Example:")
 	sharedBuffer := make(chan int, 1) // Creating a buffered channel with capacity 1
+	done := make(chan bool)
 
 	go producer(sharedBuffer) // Starting the Producer goroutine
-	go consumer(sharedBuffer) // Starting the Consumer goroutine
+	go consumer(sharedBuffer, done) // Starting the Consumer goroutine
 
-	// Wait for goroutines to finish (using a simple sleep here, but sync.WaitGroup can be used for more control)
-	time.Sleep(time.Second * 6)
+	// Wait for the consumer to finish processing
+	<-done
+	fmt.Println("Finished producing and consuming.")
 }

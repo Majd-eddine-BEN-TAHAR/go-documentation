@@ -20,6 +20,9 @@ func main() {
     fmt.Println("\nUnbuffered Channel Example:")
     unbufferedChannelExample()
 
+    // Demonstrate the Producer-Consumer pattern
+    demonstrateProducerConsumer()
+
     // Running the demonstration of the select statement.
     demonstrateSelectStatement()
 

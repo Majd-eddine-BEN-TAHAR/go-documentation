@@ -28,4 +28,7 @@ func main() {
 
     // performs multiple HTTP GET requests concurrently using sync.WaitGroup
     demonstratewaitGroup()
+
+    // demonstrateMutexUsage showcases the use of mutexes to ensure safe access to shared resources in concurrent goroutine executions.
+    demonstrateMutexUsage()
 }

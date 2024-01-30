@@ -28,9 +28,23 @@ func main() {
     var myBool bool = true
     fmt.Println("Boolean example:", myBool)
 
+	// 5. Runes:  a "rune" represents a single character like Char in java.
+	// A rune in Go represents a single Unicode character(32 bit). It's an alias for int32.
+	// Runes are used when dealing with individual characters in a string, especially when those characters are not limited to the ASCII set.
+	// Declaring and initializing a rune:
+	var myRune rune = 'A' // Represents the character 'A'
+	var chineseCharacter rune = '中' // Represents a Chinese character
+	var emojiRune rune = '😀' // Represents an emoji
+
+	// Printing runes and their integer values (Unicode code points):
+	fmt.Println("Rune example (character):", myRune)
+	fmt.Println("Rune integer value (Unicode code point):", int32(myRune))
+	fmt.Println("Chinese character as rune:", chineseCharacter)
+	fmt.Println("Emoji as rune:", emojiRune)
+
 	// -----------------------------------------------------------------------------
     /*  
-		4.Arrays:
+		6.Arrays:
 	*/
 	// An array is a fixed-size sequence of elements of the same type. A key property of an array is its size, which is part of its type. Once you define an array with a certain size, it cannot be resized, distinguishing it from slices which are more flexible.
 	// You can only modify the values of individual elements within the array using standard indexing and assignment operations.
